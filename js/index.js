@@ -51,10 +51,8 @@ class Bookstore {
   removeBook(index) {
     this.bookLibrary = this.bookLibrary.filter((book, bookIndex) => bookIndex !== index);
     localStorage.setItem('books', JSON.stringify(this.bookLibrary));
-  
     this.createLibrary();
   }
-
 }
 
 const objectOne = new Bookstore();
@@ -64,4 +62,3 @@ form.addEventListener('submit', objectOne.addBook);
 
 objectOne.storedLocal();
 objectOne.createLibrary();
-//removeBook();
