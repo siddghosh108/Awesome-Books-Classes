@@ -8,6 +8,7 @@ class Bookstore {
     this.bookLibrary = [];
     this.addBook = this.addBook.bind(this);
   }
+  
   // Check and load books from localStorage
   storedLocal() {
     if (localStorage.getItem('books') == null) {
@@ -19,6 +20,7 @@ class Bookstore {
       this.bookLibrary = JSON.parse(store);
     }
   }
+  
   // Populate the UI with books from the bookLibrary array
   createLibrary() {
     this.BooksContainer.innerHTML = '';
