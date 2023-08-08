@@ -1,12 +1,14 @@
+// Define a Bookstore class to manage books and interactions
 class Bookstore {
   constructor() {
+    // Initialize DOM element references and an array to store books
     this.BooksContainer = document.querySelector('.bookList');
     this.bookTitle = document.querySelector('.title');
     this.bookAuthor = document.querySelector('.author');
     this.bookLibrary = [];
     this.addBook = this.addBook.bind(this);
   }
-
+  // Check and load books from localStorage
   storedLocal() {
     if (localStorage.getItem('books') == null) {
       localStorage.setItem('books', JSON.stringify(this.bookLibrary));
@@ -17,7 +19,7 @@ class Bookstore {
       this.bookLibrary = JSON.parse(store);
     }
   }
-
+  // Populate the UI with books from the bookLibrary array
   createLibrary() {
     this.BooksContainer.innerHTML = '';
     this.bookLibrary.forEach((book, index) => {
@@ -32,6 +34,7 @@ class Bookstore {
     });
   }
 
+  // Add a new book to the bookLibrary array and update UI
   addBook(e) {
     e.preventDefault();
     const titleBook = this.bookTitle.value;
