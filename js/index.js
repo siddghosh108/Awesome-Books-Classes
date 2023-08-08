@@ -25,7 +25,7 @@ class Bookstore {
       bookContainer.innerHTML = `
         <div class="books_container">
             <p>"${book.titleBook}" by ${book.authorBook}</p>
-            <button onclick="removeBook(${index})">Remove</button>
+            <button onclick="objectOne.removeBook(${index})">Remove</button>
         </div>
       `;
       this.BooksContainer.appendChild(bookContainer);
@@ -47,20 +47,21 @@ class Bookstore {
     this.bookTitle.value = '';
     this.bookAuthor.value = '';
   }
+
+  removeBook(index) {
+    this.bookLibrary = this.bookLibrary.filter((book, bookIndex) => bookIndex !== index);
+    localStorage.setItem('books', JSON.stringify(this.bookLibrary));
+  
+    this.createLibrary();
+  }
+
 }
 
 const objectOne = new Bookstore();
-
-function removeBook(index) {
-  objectOne.bookLibrary = objectOne.bookLibrary.filter((book, bookIndex) => bookIndex !== index);
-  localStorage.setItem('books', JSON.stringify(objectOne.bookLibrary));
-
-  objectOne.createLibrary();
-}
 
 const form = document.querySelector('form');
 form.addEventListener('submit', objectOne.addBook);
 
 objectOne.storedLocal();
 objectOne.createLibrary();
-removeBook();
+//removeBook();
