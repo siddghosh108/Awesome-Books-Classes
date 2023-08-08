@@ -6,7 +6,7 @@ class Bookstore {
     this.bookLibrary = [];
     this.addBook = this.addBook.bind(this);
   }
-  
+
   storedLocal() {
     if (localStorage.getItem('books') == null) {
       localStorage.setItem('books', JSON.stringify(this.bookLibrary));
@@ -17,7 +17,7 @@ class Bookstore {
       this.bookLibrary = JSON.parse(store);
     }
   }
-  
+
   createLibrary() {
     this.BooksContainer.innerHTML = '';
     this.bookLibrary.forEach((book, index) => {
