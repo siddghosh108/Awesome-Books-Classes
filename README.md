@@ -71,7 +71,7 @@
 
  ## 🚀 Live Demo <a name="live-demo"></a> 
  
- [Live Demo Link](https://mariamosman11.github.io/Awesome-Books/)
+ [Live Demo Link](https://siddghosh108.github.io/Awesome-Books-Classes/)
  
 
 
@@ -97,7 +97,7 @@
 Install this project with:
 
 - Open your command prompt or terminal and run.
--  git clone https://github.com/MariamOsman11/Awesome-Books.git
+-  git clone https://github.com/siddghosh108/Awesome-Books-Classes.git
 
 ### Usage
 
